@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa de Aniversário</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Tela inicial com QR code -->
+        <div id="access-screen" class="screen active">
+            <div class="access-container">
+                <div class="lock-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h1>Acesso Restrito</h1>
+                <p>Este site só pode ser acessado através do QR code de aniversário</p>
+                <div class="qr-placeholder">
+                    <div class="qr-code">
+                        <div class="qr-pattern"></div>
+                        <div class="qr-text">QR Code</div>
+                    </div>
+                </div>
+                <div class="access-form">
+                    <input type="password" id="access-code" placeholder="Digite o código de acesso (opcional)">
+                    <button id="access-btn" class="btn">Acessar Surpresa</button>
+                </div>
+                <p class="hint">Dica: Escaneie o QR code que você recebeu para acessar a surpresa completa!</p>
+            </div>
+        </div>
+
+        <!-- Conteúdo principal da surpresa -->
+        <div id="main-content" class="screen">
+            <header class="header">
+                <h1><i class="fas fa-birthday-cake"></i> Feliz Aniversário!</h1>
+                <p class="subtitle">Uma surpresa especial para você</p>
+            </header>
+
+            <div class="content-wrapper">
+                <!-- Seção de mensagem personalizada -->
+                <section class="message-section">
+                    <h2><i class="fas fa-heart"></i> Para minha namorada especial</h2>
+                    <div class="message-box" id="custom-message">
+                        <p id="message-text">Querida amor, hoje é o seu dia especial e eu queria te fazer uma surpresa para mostrar o quanto você é importante para mim. Cada momento ao seu lado é um presente e eu sou grato por todos os sorrisos, abraços e memórias que compartilhamos. Desejo que seu dia seja tão incrível quanto você é! Te amo mais que tudo!</p>
+                        <div class="message-footer">
+                            <p class="signature">Com todo meu amor,<br>Seu namorado</p>
+                            <div class="hearts">
+                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-heart"></i>
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="edit-box">
+                        <h3><i class="fas fa-edit"></i> Personalize sua mensagem</h3>
+                        <textarea id="message-editor" placeholder="Digite sua mensagem personalizada aqui...">Querida amor, hoje é o seu dia especial e eu queria te fazer uma surpresa para mostrar o quanto você é importante para mim. Cada momento ao seu lado é um presente e eu sou grato por todos os sorrisos, abraços e memórias que compartilhamos. Desejo que seu dia seja tão incrível quanto você é! Te amo mais que tudo!</textarea>
+                        <button id="update-message" class="btn"><i class="fas fa-sync-alt"></i> Atualizar Mensagem</button>
+                    </div>
+                </section>
+
+                <!-- Seção de fotos -->
+                <section class="photos-section">
+                    <h2><i class="fas fa-images"></i> Nossas Memórias</h2>
+                    <div class="photos-grid" id="photos-container">
+                        <!-- Fotos serão adicionadas aqui -->
+                        <div class="photo-item placeholder">
+                            <i class="fas fa-plus"></i>
+                            <p>Adicionar Foto</p>
+                            <input type="file" class="photo-upload" accept="image/*">
+                        </div>
+                    </div>
+                    <p class="instruction">Clique no botão "+" para adicionar suas fotos favoritas</p>
+                </section>
+
+                <!-- Seção de contagem regressiva -->
+                <section class="countdown-section">
+                    <h2><i class="fas fa-clock"></i> Contagem Regressiva para o Grande Dia</h2>
+                    <div class="countdown-container">
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="days">0</div>
+                            <div class="countdown-label">Dias</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="hours">0</div>
+                            <div class="countdown-label">Horas</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="minutes">0</div>
+                            <div class="countdown-label">Minutos</div>
+                        </div>
+                        <div class="countdown-box">
+                            <div class="countdown-number" id="seconds">0</div>
+                            <div class="countdown-label">Segundos</div>
+                        </div>
+                    </div>
+                    <p class="countdown-message" id="countdown-message">Faltam apenas alguns momentos para celebrar você!</p>
+                </section>
+
+                <!-- Seção de música -->
+                <section class="music-section">
+                    <h2><i class="fas fa-music"></i> Música Especial</h2>
+                    <div class="music-player">
+                        <div class="music-info">
+                            <h3 id="music-title">Música do Nosso Amor</h3>
+                            <p id="music-artist">Seleção especial</p>
+                        </div>
+                        <div class="music-controls">
+                            <button id="play-btn" class="music-btn"><i class="fas fa-play"></i></button>
+                            <button id="pause-btn" class="music-btn"><i class="fas fa-pause"></i></button>
+                            <button id="next-btn" class="music-btn"><i class="fas fa-forward"></i></button>
+                        </div>
+                        <div class="music-volume">
+                            <i class="fas fa-volume-up"></i>
+                            <input type="range" id="volume-slider" min="0" max="100" value="70">
+                        </div>
+                    </div>
+                    <p class="music-hint">Adicione uma música especial tocando de fundo para tornar o momento ainda mais especial!</p>
+                </section>
+            </div>
+
+            <footer class="footer">
+                <p>Feito com <i class="fas fa-heart heart"></i> para você no seu dia especial</p>
+                <p class="footer-note">Este site foi criado especialmente para esta data e ficará disponível como lembrança.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Modal para visualizar foto -->
+    <div id="photo-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modal-image" src="" alt="Foto ampliada">
+            <p id="modal-caption"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Incluindo uma música de fundo (pode ser alterada) -->
+    <audio id="background-music" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-sunset-687.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+</body>
+</html>
